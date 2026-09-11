@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# PULSE — Performance Intelligence Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PULSE is a high-performance telemetry dashboard built to visualize and explore large datasets without slowing down the interface.
 
-Currently, two official plugins are available:
+It supports datasets up to **5 million telemetry points** and provides real-time performance monitoring, interactive charts, and a virtualized data explorer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- Visualizes CPU, memory, latency, throughput, and frame-time data
+- Supports **100K, 500K, 1M, and 5M** data points
+- Uses **Web Workers** for heavy data generation and processing
+- Uses **adaptive rendering** for large datasets
+- Provides a virtualized data table for exploring millions of rows
+- Includes runtime FPS, frame-time, memory, and performance scoring
+- Supports Raw, Adaptive, and Aggregated rendering modes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Apache ECharts
+- Zustand
+- TanStack Virtual
+- Web Workers
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Performance
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Tested with a **5M point dataset**:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ~120 FPS runtime
+- ~6.9 ms frame time
+- 99.5 / 100 performance score
+- 5,000,000 rows handled through virtualization
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
 
-```
+The project separates the UI, data generation, telemetry processing, state management, and visualization layers to keep the application maintainable and responsive.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Live Demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+https://pulse-telemetry.vercel.app
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Repository
 
-```
+https://github.com/Siddharth-05spike/pulse
