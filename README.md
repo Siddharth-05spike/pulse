@@ -44,3 +44,21 @@ https://pulse-telemetry.vercel.app
 ## Repository
 
 https://github.com/Siddharth-05spike/pulse
+
+
+## Screenshots
+
+### Overview
+![PULSE Overview](screenshots/01-overview.png)
+
+### Telemetry
+![Telemetry Visualization](screenshots/02-telemetry.png)
+
+### Performance Analysis
+![Performance Analysis](screenshots/03-performance.png)
+
+### Data Explorer
+![5M Data Explorer](screenshots/04-data-explorer.png)
+
+### Performance Engine
+![Performance Engine](screenshots/05-performance-engine.png)
